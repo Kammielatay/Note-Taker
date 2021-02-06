@@ -16,8 +16,8 @@ app.use(express.static("public"));
 
 // Routes
 // Basic route that sends the user first to the AJAX Page
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
+require("./Develop/routes/apiRoutes")(app);
+require("./Develop/routes/htmlRoutes")(app);
 
 
 // Starts the server to begin listening
