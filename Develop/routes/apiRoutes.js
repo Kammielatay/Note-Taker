@@ -3,7 +3,7 @@ var path = require("path");
 var uniqid = require("uniqid");
 
 function getNotes() {
-  let notes = fs.readFileSync("./db/db.json", 'utf8') 
+  let notes = fs.readFileSync("Develop/db/db.json", 'utf8') 
   return JSON.parse(notes);
 }
 
@@ -26,7 +26,7 @@ module.exports = (app) => {
     allNotes.push(newNote);
 
    // This is writing the file and sending back the request
-    fs.writeFile("./db/db.json", JSON.stringify(allNotes), "utf8", function (err) {
+    fs.writeFile("Develop/db/db.json", JSON.stringify(allNotes), "utf8", function (err) {
       if (err) throw err;
       res.send(req.body);
   });
@@ -41,7 +41,7 @@ module.exports = (app) => {
     // this is filtering through each note and finding the note that does not match the id so that it can be saved to the db.json
     var filterNotes = allNotes.filter(note => note.id !== noteId);
   
-    fs.writeFile(path.join("./db/db.json"), JSON.stringify(filterNotes), err => {
+    fs.writeFile(path.join("Develop/db/db.json"), JSON.stringify(filterNotes), err => {
       if (err) throw err;
       res.json(filterNotes);
     });
