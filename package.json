@@ -13,5 +13,13 @@
     "uniqid": "^5.2.0"
   },
   "keywords": [],
-  "description": "Allows you to take and delete notes"
+  "description": "Allows you to take and delete notes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kammielatay/Note-Taker.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kammielatay/Note-Taker/issues"
+  },
+  "homepage": "https://github.com/Kammielatay/Note-Taker#readme"
 }
