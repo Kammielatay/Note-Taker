@@ -8,7 +8,6 @@ function getNotes() {
 }
 
 module.exports = (app) => {
-// This is to get all the notes from the db.json file
 
   app.get("/api/notes", function (req, res) {
     // This is using the getNotes function to read the db.json file 
@@ -16,7 +15,6 @@ module.exports = (app) => {
     res.json(allNotes)
   })
 
-// This is the post method the notes
 
   app.post("/api/notes", function (req, res) {
     // getting the new note and giving it a unique id
@@ -34,13 +32,13 @@ module.exports = (app) => {
   });
 })
 
-// This is to delete an item from the array
 
   app.delete('/api/notes/:id', function (req, res) {
-    
+    // getting all notes and the note params
     let allNotes = getNotes()
     let noteId = req.params.id;
-
+    
+    // this is filtering through each note and finding the note that does not match the id so that it can be saved to the db.json
     var filterNotes = allNotes.filter(note => note.id !== noteId);
   
     fs.writeFile(path.join("./db/db.json"), JSON.stringify(filterNotes), err => {
